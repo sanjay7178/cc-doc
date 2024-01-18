@@ -1,35 +1,31 @@
 ---
-title: About Goldydocs
+title: About ClusterCockpit
 linkTitle: About
 menu: {main: {weight: 10}}
 ---
 
-{{% blocks/cover title="About Goldydocs" image_anchor="bottom" height="auto" %}}
+{{% blocks/cover title="About ClusterCockpit" image_anchor="bottom" height="auto" %}}
 
-A sample site using the Docsy Hugo theme.
+The ClusterCockpit project is a collaborative effort to develop a job-specific performance and energy monitoring framework for HPC clusters. The NHR center NHR@FAU is the lead developer with contributions from several other HPC centers. All ClusterCockpit components are made available under the MIT open source license and are freely available for download from our GitHub page. In addition to software development, the ClusterCockpit project is also actively working on establishing format and interface standards for HPC monitoring environments.
 {.mt-5}
 
 {{% /blocks/cover %}}
 
 {{% blocks/lead %}}
+ClusterCockpit can be used as a complete integrated monitoring solution, but components can also be integrated with external components. All components are developed in the [Go](https://go.dev) programming language. The web frontend UI is implemented as reusable [Svelte](https://svelte.dev) components.
 
-Goldydocs is a sample site using the [Docsy](https://github.com/google/docsy)
-Hugo theme that shows what it can do and provides you with a template site
-structure. It’s designed for you to clone and edit as much as you like. See the
-different sections of the documentation and site for more ideas.
-
+ClusterCockpit is stable and is used in production at several large HPC data centers. Contact us if you are interested in deploying ClusterCockpit at your center. We can also help you plan and set up ClusterCockpit at your site.
 {{% /blocks/lead %}}
 
 {{% blocks/section %}}
+# Funding
 
-# This is another section
-{.text-center}
+**Project duration: 09/2022 - 08/2025**
 
-{{% /blocks/section %}}
+ClusterCockpit is funded by BMBF Germany as part of the EE-HPC project under the funding program Hoch- und Höchstleistungsrechnen für das digitale Zeitalter 2021-2024 – Forschung und Investitionen zum High-Performance Computing, Call Richtlinie zur Förderung von Verbundprojekten auf dem Gebiet des energieeffizienten High-Performance Computings (GreenHPC)
 
-{{% blocks/section %}}
-
-# This is another section
-{.text-center}
-
+**Grant 16ME0583K**
+{{% imgproc bmbf Resize x600 %}}
+Funded by BMBF
+{{% /imgproc %}}
 {{% /blocks/section %}}
