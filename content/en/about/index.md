@@ -25,7 +25,5 @@ ClusterCockpit is stable and is used in production at several large HPC data cen
 ClusterCockpit is funded by BMBF Germany as part of the EE-HPC project under the funding program Hoch- und Höchstleistungsrechnen für das digitale Zeitalter 2021-2024 – Forschung und Investitionen zum High-Performance Computing, Call Richtlinie zur Förderung von Verbundprojekten auf dem Gebiet des energieeffizienten High-Performance Computings (GreenHPC)
 
 **Grant 16ME0583K**
-{{% imgproc bmbf Resize x600 %}}
-Funded by BMBF
-{{% /imgproc %}}
+{{< figure src="bmbf.jpg" width="70%" alt="Funded by BMBF" >}}
 {{% /blocks/section %}}
