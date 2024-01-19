@@ -1,36 +1,48 @@
 ---
 title: Overview
-description: Here's where your user finds out if your project is for them.
 weight: 1
 ---
-
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
-
-
-The Overview is where your users find out about your project. Depending on the size of your docset, you can have a separate overview page (like this one) or put your overview contents in the Documentation landing page (like in the Docsy User Guide).
-
-Try answering these questions for your user in this page:
-
 ## What is it?
+ClusterCockpit is a monitoring framework for job-specific performance and power
+monitoring on distributed HPC clusters. The focus is put on simple installation and
+maintenance, high security and intuitive usage.
+ClusterCockpit provides a modern web interface which provides:
+* HPC Users an overview about their running and past batch jobs with access to various metrics including hardware performance counter data. Jobs can be sorted, filtered, and tagged.
+* Support staff an easy access to all job data on multiple clusters. Jobs and users can be sorted and filtered using a very flexible interface. Job and user data can be aggregated using a customisable statistical analysis. There is a status view providing an overview for all clusters.
+* Administrators single file deployment for the ClusterCockpit web backend. A Systemd setup for easy control. RPM and DEB packages for the node agent. For authentication local accounts, LDAP, and JWT tokens are supported. There exists an extensive REST API to integrate into a existing monitoring and batch job scheduler infrastructure.
 
-Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.
+ClusterCockpit is used in production at several Tier-2 HPC computing centers,
+you can find a list [here](/testimonials). It should work for small to medium HPC clusters.
 
-## Why do I want it?
+{{< alert color="warning" title="Warning" >}}
+Because ClusterCockpit performs no data reduction for jobs with many nodes and a
+long duration there are currently limits to the job sizes that can be viewed.
+This will be resolved in a future release.
+{{< /alert >}}
 
-Help your user know if your project will help them. Useful information can include:
+## How does it work?
+{{< figure src="cc-arch.png"  width="80%" alt="ClusterCockpit software architecture" >}}
 
-* **What is it good for?**: What types of problems does your project solve? What are the benefits of using it?
+ClusterCockpit consists of
+* the web user interface and API backend [cc-backend](https://github.com/ClusterCockpit/cc-backend)
+* the node agent [cc-metric-collector](https://github.com/ClusterCockpit/cc-metric-collector)
+* and the in-memory metric cache [cc-metric-store](https://github.com/ClusterCockpit/cc-metric-collector)
 
-* **What is it not good for?**: For example, point out situations that might intuitively seem suited for your project, but aren't for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.
+All components can also be used individually.
 
-* **What is it *not yet* good for?**: Highlight any useful features that are coming soon.
+Node metrics are collected continuously and sent to the metrics store at
+fixed intervals. Job details are provided by an external adapter for the
+batch job scheduler and sent to cc-backend via a REST API. For running
+jobs, cc-backend queries the metrics store to collect all required time
+series data. Once a job is finished, it is persisted to a JSON file-based
+job archive that contains all job metadata and metrics data. Finished jobs
+are loaded from the job archive. The metrics store uses cyclic buffers and
+stores data only for a limited period of time.
 
 ## Where should I go next?
 
 Give your users next steps from the Overview. For example:
 
-* [Getting Started](/docs/getting-started/): Get started with $project
-* [Examples](/docs/examples/): Check out some example code!
+* [Getting Started](/docs/getting-started/): Get started with ClusterCockpit
+* [User guide](/docs/userguide/): A user guide for the ClusterCockpit web interface
 
