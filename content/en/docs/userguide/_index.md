@@ -1,5 +1,5 @@
 ---
-title: User manual
+title: User Manual
 description: How to use the web interface?
 weight: 3
 ---
