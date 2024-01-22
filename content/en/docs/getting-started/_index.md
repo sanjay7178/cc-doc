@@ -38,10 +38,10 @@ HTTP server listening at 127.0.0.1:8080...
 ```
 Open a web browser and access [http://localhost:8080](http://localhost:8080).
 You should see the ClusterCockpit login page:
-{{< figure src="cc-login-screen.png" alt="ClusterCockpit Login page" >}}
+{{< figure src="./demo-standalone/cc-login-screen.png" alt="ClusterCockpit Login page" >}}
 
 Enter `demo` for the Username and `demo` for the Password and press the Submit button. After that the ClusterCockpit index page should be displayed:
-{{< figure src="cc-index-screen.png" alt="ClusterCockpit Index page" >}}
+{{< figure src="./demo-standalone/cc-index-screen.png" alt="ClusterCockpit Index page" >}}
 
 The demo user has the admin role and therefore can see all views.
 {{< alert title="Note" >}}Because the demo only loads data from the job archive some views as the status and systems view do not work!{{< /alert >}}

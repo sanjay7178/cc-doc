@@ -28,7 +28,7 @@ The http router calls auth in the following cases:
 * Any route in the secured subrouter will always call Auth(), on success it will
   call the next handler in the chain, on failure it will render the login
   template.
-```
+```go
 secured.Use(func(next http.Handler) http.Handler {
 	return authentication.Auth(
 		// On success;
@@ -64,13 +64,13 @@ The Login function (located in `auth.go`):
 ### Local authenticator
 
 This authenticator is applied if 
-```
+```go
 return user != nil && user.AuthSource == AuthViaLocalPassword
 ```
 
 Compares the password provided by the login form to the password hash stored in
 the user database table:
-```
+```go
 if e := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(r.FormValue("password"))); e != nil {
 	log.Errorf("AUTH/LOCAL > Authentication for user %s failed!", user.Username)
 	return nil, fmt.Errorf("Authentication failed")
@@ -81,7 +81,7 @@ if e := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(r.FormValue(
 
 This authenticator is applied if the user was found in the database and its
 AuthSource is LDAP:
-```
+```go
 if user != nil {
 	if user.AuthSource == schema.AuthViaLDAP {
 		return user, true
@@ -94,7 +94,7 @@ directory. In case this succeeds the user is persisted to the database and can
 login.
 
 Gets the LDAP connection and tries a bind with the provided credentials:
-```
+```go
 if err := l.Bind(userDn, r.FormValue("password")); err != nil {
 	log.Errorf("AUTH/LDAP > Authentication for user %s failed: %v", user.Username, err)
 	return nil, fmt.Errorf("Authentication failed")
@@ -106,7 +106,7 @@ if err := l.Bind(userDn, r.FormValue("password")); err != nil {
 Login via JWT token will create a session without password.
 For login the `X-Auth-Token` header is not supported. This authenticator is
 applied if the Authorization header or query parameter login-token is present:
-```
+```go
 	return user, r.Header.Get("Authorization") != "" ||
 		r.URL.Query().Get("login-token") != ""
 ```
@@ -133,7 +133,7 @@ It is first checked if the required configuration options are set:
 and optionally the environment variable `CROSS_LOGIN_JWT_PUBLIC_KEY` is set.
 
 This authenticator is applied if the configured cookie is present:
-```
+```go
 	jwtCookie, err := r.Cookie(cookieName)
 
 	if err == nil && jwtCookie.Value != "" {
