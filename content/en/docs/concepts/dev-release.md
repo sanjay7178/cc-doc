@@ -4,7 +4,7 @@ description: >
   Steps to prepare a `cc-backend` release
 categories: [Developer]
 ---
-# Steps to prepare a release
+## Steps to prepare a release
 
 1. On `hotfix` branch:
    * Update ReleaseNotes.md

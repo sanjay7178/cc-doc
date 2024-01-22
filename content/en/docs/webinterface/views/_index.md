@@ -1,6 +1,6 @@
 ---
-title: Actions
-description: Action-Specific Frontend Usage Information.
+title: Views
+description: View-Specific Frontend Usage Information.
 weight: 2
 ---
 

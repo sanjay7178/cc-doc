@@ -1,8 +1,9 @@
 ---
-title: User Manual
+title: Web Interface
 description: How to use the web interface?
 weight: 3
 ---
+
 The central component of ClusterCockpit is the web- and api backend
 `cc-backend`. We provide a demo setup that allows you to get an impression of
 the web interface. If you just want to try the demo and you have a Linux OS you
