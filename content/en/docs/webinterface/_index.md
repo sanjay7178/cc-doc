@@ -1,6 +1,7 @@
 ---
 title: Web Interface
 description: How to use the web interface?
+categories: [cc-backend]
 weight: 3
 ---
 

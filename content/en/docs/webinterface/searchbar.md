@@ -1,42 +1,26 @@
 ---
 title: Searchbar
 description: >
- Searchbar Functionality
+  Searchbar Functionality
+categories: [cc-backend]
+tags: [Frontend, User]
+weight: 2
 ---
 
-## Usage
+The top searchbar will handle page wide searches either by entering a searchterm directly as `<query>`, or by using a "search tag" implemented in the form of `<tag>:<query>`. Entering a searchterm directly will start a hierarchical search which will return the first match in the hierarchy (see table below). It is recommended to supply the search with a tag to specify the searched entity. For example, `jobName:myJobName` will specifically search for all jobs which have the queried string (or a part thereof) in their `job.meta_data` column in the database. For all tags with examples, see the table below.
 
-* Searchtags are implemented as `type:<query>` search-string
-  * Types `jobId, jobName, projectId, username, name, arrayJobId` for roles `admin` and `support`
-    * `jobName` is jobName as persisted in `job.meta_data` table-column
-    * `username` is actual account identifier as persisted in `job.user` table-column
-    * `name` is account owners name as persisted in `user.name` table-column
-  * Types `jobId, jobName, projectId, arrayJobId` for role `user`
-  * Examples:
-    * `jobName:myJob12`
-    * `jobId:123456`
-    * `username:abcd100`
-    * `name:Paul`
-* If no searchTag used: Best guess search with the following hierarchy
-  * `jobId -> username -> name -> projectId -> jobName`
-* Destinations:
-  * JobId: Job-Table (Allows multiple identical matches, e.g. JobIds from different clusters)
-  * JobName: Job-Table (Allows multiple identical matches, e.g. JobNames from different clusters)
-  * ProjectId: Job-Table
-  * Username: Users-Table
-    * **Please Note**: Only users with jobs will be shown in table! I.e., Users without jobs will be missing in table. Also, a `Last 30 Days` is active by default and might filter out expected users.
-  * Name: Users-Table
-    * **Please Note**: Only users with jobs will be shown in table! I.e., Users without jobs will be missing in table. Also, a `Last 30 Days` is active by default and might filter out expected users.
-  * ArrayJobId: Job-Table (Lists all Jobs of Queried ArrayJobId)
-  * Best guess search always redirects to Job-Table or `/monitoring/user/$USER` (first username match)
-  * Unprocessable queries will display messages detailing the cause (Info, Warning, Error)
-* Spaces trimmed (both for searchTag and queryString)
-  * `  job12` == `job12`
-  * `projectID : abcd ` == `projectId:abcd`
-* `jobName`- and `name-`queries work with a part of the target-string
-  * `jobName:myjob` for jobName "myjob_cluster1"
-  * `name:Paul` for name "Paul Atreides"
+Both tags and queries are trimmed of all spaces before performing the search, returning the same results independently of location and number of spaces, e.g. ` name : Paul` and `name:  paul  ` are both handled identically.
 
-* JobName GQL Query is resolved as matching the query as a part of the whole metaData-JSON in the SQL DB.
+Unprocessable queries will return a message detailing the cause of the error.
 
+### Available Tags
 
+|Tag|Example Query|Destination|Note|
+|---|-------------|-----------|----|
+|No Tag Used | `abcd100`           | [Joblist]({{< ref "views/joblist" >}} "Joblist") or [User Joblist]({{< ref "views/userjobs" >}} "User Joblist") | Performs hierarchical search `jobId -> username -> name -> projectId -> jobName` |
+|JobId       | `jobId:123456`      | [Joblist]({{< ref "views/joblist" >}} "Joblist")         | Allows multiple identical matches, e.g. JobIds from different clusters |
+|JobName     | `jobName:myJobName` | [Joblist]({{< ref "views/joblist" >}} "Joblist")         | Works with partial queries. Allows multiple identical matches, e.g. JobNames from different clusters |
+|ProjectId   | `projectId:abcd100` | [Joblist]({{< ref "views/joblist" >}} "Joblist")         | All Jobs of the given project |
+|Username    | `username:abcd100a` | [Users Table]({{< ref "views/users" >}} "Users Table")   | Only active users are returned; Users without jobs are not shown. Also, a `Last 30 Days` is active by default and might filter out expected users. **Admin Only**|
+|Name        | `name:Paul`         | [Users Table]({{< ref "views/users" >}} "Users Table")   | Works with partial queries. Only active users are returned; Users without jobs are not shown. Also, a `Last 30 Days` is active by default and might filter out expected users. **Admin Only**|
+|ArrayJobId  | `arrayJobId:891011` | [Joblist]({{< ref "views/joblist" >}} "Joblist")         | All Jobs of the given arrayJobId|

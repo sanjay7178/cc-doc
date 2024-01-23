@@ -1,7 +1,7 @@
 ---
 title: Views
 description: View-Specific Frontend Usage Information.
-weight: 2
+weight: 5
 ---
 
 {{% pageinfo %}}
