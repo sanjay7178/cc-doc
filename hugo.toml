@@ -81,7 +81,7 @@ description = "HPC Monitoring Framework"
 section = ["HTML", "print", "RSS"]
 
 [params]
-copyright = "The ClusterCockpit Project"
+copyright = "ClusterCockpit Team"
 privacy_policy = "/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
