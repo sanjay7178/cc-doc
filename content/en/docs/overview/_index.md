@@ -44,5 +44,5 @@ stores data only for a limited period of time.
 Give your users next steps from the Overview. For example:
 
 * [Getting Started](/docs/getting-started/): Get started with ClusterCockpit
-* [User guide](/docs/userguide/): A user guide for the ClusterCockpit web interface
+* [User guide](/docs/webinterface/): A user guide for the ClusterCockpit web interface
 
