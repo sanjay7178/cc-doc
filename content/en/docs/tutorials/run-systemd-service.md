@@ -1,8 +1,9 @@
 ---
-title: How to setup a systemd service
-categories: [Administration]
+title: How to setup a systemd service for cc-backend
+categories: [cc-backend]
+tags: [Admin]
 ---
-## How to run `cc-backend` as a systemd service.
+## How to run as a systemd service.
 
 The files in this directory assume that you install ClusterCockpit to
 `/opt/monitoring/cc-backend`.

@@ -2,7 +2,8 @@
 title: Configuration Management
 description: >
   How ClusterCockpit deals with versioning of external assets
-categories: [Developer]
+categories: [cc-backend]
+tags: [Developer]
 ---
 ## Release versions
 

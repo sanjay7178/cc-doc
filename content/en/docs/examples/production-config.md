@@ -1,6 +1,7 @@
 ---
 title: Production configuration
-categories: [Administration]
+categories: [cc-backend]
+tags: [Admin]
 ---
 ## Recommended workflow for deployment
 

@@ -3,7 +3,7 @@ title: Release process for cc-backend
 description: >
   Steps to prepare a `cc-backend` release
 categories: [cc-backend]
-tags: [Developer]
+tags: [developer]
 ---
 ## Steps to prepare a release
 

@@ -1,6 +1,7 @@
 ---
 title: How to deploy and update cc-backend
-categories: [Administration]
+categories: [cc-backend]
+tags: [Admin]
 ---
 ## Recommended workflow for deployment
 
@@ -35,7 +36,7 @@ You have to take care, that the ownership of the `./var` folder and
 its contents are set accordingly.
 {{< /alert >}}
 
-### Workflow to deploy new version
+### Workflow to update
 
 This example assumes the DB and job archive versions did not change.
 * Stop systemd service:

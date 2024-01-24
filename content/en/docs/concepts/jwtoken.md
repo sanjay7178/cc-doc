@@ -2,6 +2,8 @@
 title: Java Web Token
 description: >
  Java Web Token (JWT) Usage in ClusterCockpit
+categories: [cc-backend, cc-metric-store]
+tags: [Developer, Admin]
 ---
 
 ## Introduction

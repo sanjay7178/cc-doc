@@ -1,5 +1,5 @@
 ---
 title: Commit naming conventions
-categories: [Developer]
+tags: [Developer]
 ---
 

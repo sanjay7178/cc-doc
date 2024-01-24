@@ -2,7 +2,7 @@
 title: Testing
 description: >
   How to do software tests in cc-backend
-categories: [Developer]
+tags: [Developer]
 ---
 ## Overview
 
