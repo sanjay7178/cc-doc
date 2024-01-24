@@ -1,7 +1,9 @@
 ---
 title: Hands-On Demo
 description: >
-  Hands-On Demo Walkthrough of basic ClusterCOckpit Setup and API usage (without Docker)
+  Hands-On Demo for a basic ClusterCockpit setup and API usage (without Docker)
+categories: [cc-backend, cc-metric-store]
+tags: [Developer, Admin]
 ---
 
 ## Prerequisites

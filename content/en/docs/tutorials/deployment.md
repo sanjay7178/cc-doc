@@ -1,9 +1,10 @@
 ---
 title: How to deploy and update cc-backend
+description: Recommended deployment and update workflow for production use
 categories: [cc-backend]
 tags: [Admin]
 ---
-## Recommended workflow for deployment
+## Workflow for deployment
 
 {{< alert color="success" title="Info" >}}
 ### Why we do not provide a docker container
@@ -38,7 +39,10 @@ its contents are set accordingly.
 
 ### Workflow to update
 
-This example assumes the DB and job archive versions did not change.
+This example assumes the DB and job archive versions did not change. In case the
+new binary requires a newer database or job archive version [read
+here](/docs/tutorials/migration) how to migrate to newer versions.
+
 * Stop systemd service:
 ```sh
 sudo systemctl stop clustercockpit.service

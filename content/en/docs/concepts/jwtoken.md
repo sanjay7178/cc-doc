@@ -1,7 +1,7 @@
 ---
-title: Java Web Token
+title: JSON Web Token
 description: >
- Java Web Token (JWT) Usage in ClusterCockpit
+ JSON Web Token (JWT) support in ClusterCockpit
 categories: [cc-backend, cc-metric-store]
 tags: [Developer, Admin]
 ---

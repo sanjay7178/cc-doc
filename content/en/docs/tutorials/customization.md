@@ -1,12 +1,13 @@
 ---
 title: How to customize cc-backend
+description: Add legal texts, modify login page, and add custom logo.
 categories: [cc-backend]
 tags: [Admin]
 ---
 ## Overview
 Customizing `cc-backend` means changing the logo, legal texts, and the login
 template instead of the placeholders. You can also place a text file in `./var`
-to add dynamic status or notification messages to the clusterCockpit homepage.
+to add dynamic status or notification messages to the ClusterCockpit homepage.
 
 ## Replace legal texts
 To replace the `imprint.tmpl` and `privacy.tmpl` legal texts, you can place your
@@ -17,7 +18,7 @@ You can use the placeholders in `web/templates` as a blueprint.
 ## Replace login template
 To replace the default login layout and styling, you can place your version in
 `./var/`. At startup `cc-backend` will check if `./var/login.tmpl` exist and use
-it instead of the built-in placeholder. You can use the default temaplte
+it instead of the built-in placeholder. You can use the default template
 `web/templates/login.tmpl` as a blueprint.
 
 ## Replace logo
