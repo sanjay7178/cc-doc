@@ -4,7 +4,7 @@ description: >
   Searchbar Functionality
 categories: [cc-backend]
 tags: [Frontend, User]
-weight: 2
+weight: 3
 ---
 
 The top searchbar will handle page wide searches either by entering a searchterm directly as `<query>`, or by using a "search tag" implemented in the form of `<tag>:<query>`. Entering a searchterm directly will start a hierarchical search which will return the first match in the hierarchy (see table below). It is recommended to supply the search with a tag to specify the searched entity. For example, `jobName:myJobName` will specifically search for all jobs which have the queried string (or a part thereof) in their `job.meta_data` column in the database. For all tags with examples, see the table below.

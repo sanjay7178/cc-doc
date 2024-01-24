@@ -4,12 +4,16 @@ description: >
   Webinterface Settings Page
 categories: [cc-backend]
 tags: [Frontend, User]
-weight: 3
+weight: 2
 ---
 
 {{< alert >}}TODO: Add Picture of settings page{{< /alert >}}
 
-## Customization Settings
+The settings view allows non-privileged users to customize how metric plots are rendered. This includes line width, number of plots per row (where applicable), whether backgrounds should be colored, and the color scheme of multi-line metric plots.
+
+Privileged users will also find an administrative interface.
+
+## Plotting Options
 
 |Field|Options|Note|
 |---|---|---|
@@ -18,7 +22,7 @@ weight: 3
 |Colored Backgrounds|||
 |Color Scheme|||
 
-## Administration Settings
+## Administration Options
 
 **NOTE**: Admin Only!
 
