@@ -1,7 +1,7 @@
 ---
 title: Authentication
 description: >
-  A behind the scenes description how authentication mechanisms is implemented
+  A behind the scenes description of how authentication mechanisms are implemented
 categories: [cc-backend]
 tags: [Developer]
 ---

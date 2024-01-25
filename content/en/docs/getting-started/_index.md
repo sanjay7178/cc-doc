@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: What does your user need to know to try your project?
+description: Information on how to setup our demo and build cc-backend
 weight: 2
 ---
 The central component of ClusterCockpit is the web- and api backend

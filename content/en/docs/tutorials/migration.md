@@ -1,9 +1,10 @@
 ---
-title: Upgrading
-description: >
-  Upgrading ClusterCockpit and nested dependencies to new versions
+title: Migration
+description: Database and job archive migrations
+categories: [cc-backend]
+tags: [Admin]
 ---
-
+## Introduction
 In general, an upgrade is nothing more than a replacement of the binary file.
 All the necessary files, except the database file, the configuration file and
 the job archive, are embedded in the binary file. It is recommended to use a
@@ -23,7 +24,7 @@ is mandatory in case the database needs to be migrated. In the case of sqlite,
 this means to stopping `cc-backend` and copying the sqlite database file
 somewhere.
 
-#  Migrating the database
+##  Migrating the database
 
 After you have backed up the database, run the following command to migrate the
 database to the latest version:
@@ -61,7 +62,7 @@ SELECT * FROM schema_migrations;
 The first column indicates the current database version and the second column is
 a dirty flag indicating whether the migration was successful.
 
-# Migrating the job archive
+## Migrating the job archive
 
 Job archive migration requires a separate tool (`archive-migration`), which is
 part of the cc-backend source tree (build with `go build ./tools/archive-migration`)

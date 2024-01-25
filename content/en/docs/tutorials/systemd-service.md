@@ -1,5 +1,6 @@
 ---
-title: How to setup a systemd service for cc-backend
+title: How to setup a systemd service
+description: Run ClusterCockpit components as systemd services
 categories: [cc-backend]
 tags: [Admin]
 ---
