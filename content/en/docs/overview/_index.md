@@ -1,5 +1,6 @@
 ---
 title: Overview
+description: Introduction to the ClusterCockpit monitoring framework
 weight: 1
 ---
 ## What is it?
