@@ -7,4 +7,8 @@ tags: [Frontend, User]
 weight: 13
 ---
 
-lala
+{{< alert >}}TODO: Add Picture{{< /alert >}}
+
+### Navigation Bar
+
+### Metric Table

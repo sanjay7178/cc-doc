@@ -7,4 +7,10 @@ tags: [Frontend, User]
 weight: 14
 ---
 
-lala
+{{< alert >}}TODO: Add Picture{{< /alert >}}
+
+## General Information
+
+## Average Distribution Histograms
+
+## User Defined Scatterplots

@@ -2,56 +2,20 @@
 title: Web Interface
 description: How to use the web interface?
 categories: [cc-backend]
+tags: [Frontend, User]
 weight: 3
 ---
 
-The central component of ClusterCockpit is the web- and api backend
-`cc-backend`. We provide a demo setup that allows you to get an impression of
-the web interface. If you just want to try the demo and you have a Linux OS you
-can do so using the `cc-backend` [release binary](https://github.com/ClusterCockpit/cc-backend/releases).
-You find detailed instructions on how to setup the demo with the release binary [here](/docs/getting-started/demo-standalone) 
-If you have a different OS or want to build `cc-backend` yourself follow the instructions below.
+{{< alert >}}TODO: Add Picture of home table{{< /alert >}}
 
-## Prerequisites
+## Home
 
-To build `cc-backend` you need:
-* A [go compiler](https://go.dev/dl/), version 1.20 or newer. Most recent os environments should have a package with a recent enough version. On MacOS we recommend to use [Homebrew](https://brew.sh) to install on.
-* A node.js environment including the `npm` package manager.
-* A git revision control client.
-* For the demo shell script you need `wget` to download the example job archive
+The entrypoint for each login via the login mask is a table containing each configured cluster as a row with the following columns:
 
-## Try it out!
-
-All ClusterCockpit components are available within the [GitHub ClusterCockpit project](https://github.com/ClusterCockpit).
-
-Clone `cc-backend` and change directory into the repository:
-```bash
-git clone https://github.com/ClusterCockpit/cc-backend.git && cd cc-backend
-```
-{{< alert title="Note" >}}The startDemo script will download a tar file with 38MB (223MB on disk)!{{< /alert >}}
-
-Execute the demo start script:
-```bash
-./startDemo.sh
-```
-What follows is output from building `cc-backend ` and downloading the job-archive
-```
-HTTP server listening at 127.0.0.1:8080...
-```
-Open a web browser and access [http://localhost:8080](http://localhost:8080).
-You should see the ClusterCockpit login page:
-{{< figure src="cc-login-screen.png" alt="ClusterCockpit Login page" >}}
-
-Enter `demo` for the Username and `demo` for the Password and press the Submit button. After that the ClusterCockpit index page should be displayed:
-{{< figure src="cc-index-screen.png" alt="ClusterCockpit Index page" >}}
-
-The demo user has the admin role and therefore can see all views.
-{{< alert title="Note" >}}Because the demo only loads data from the job archive some views as the status and systems view do not work!{{< /alert >}}
-
-For details about the features of the web interface have a look at the [user guide](/docs/userguide).
-
-## Installation
-
-## Setup
-
-Is there any initial setup users need to do after installation to try your project?
+* **Name**: The configured clusters' name
+* **Running Jobs**: Number of Jobs currently running longer than 5 minutes (or configured `shortRunning` amount of time)
+  * Clicking the Link will forward to the [job list]({{< ref "views/joblist" >}} "Job List") with preset filters for cluster and running jobs
+* **Total Jobs**: Number of Jobs in the respective job-archive
+  * Clicking the Link will forward to the [job list]({{< ref "views/joblist" >}} "Job List") with preset filter for cluster
+* **Status View**: Link to the [status view]({{< ref "views/status" >}} "Status View") of the respective cluster
+* **Systems View**: Link to the [systems view]({{< ref "views/systems" >}} "Systems View") view of the respective cluster

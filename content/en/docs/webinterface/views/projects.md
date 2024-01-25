@@ -7,4 +7,12 @@ tags: [Frontend, User]
 weight: 8
 ---
 
-lala
+{{< alert >}}TODO: Add Picture{{< /alert >}}
+
+|Column|Example|Description|Note|
+|-----|-------|-----------|----|
+|Project Name||||
+|Total Jobs||||
+|Total Walltime||||
+|Total Core Hours||||
+|Total Accelerator Hours||||

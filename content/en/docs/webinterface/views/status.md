@@ -7,4 +7,10 @@ tags: [Frontend, User]
 weight: 16
 ---
 
-lala
+{{< alert >}}TODO: Add Picture{{< /alert >}}
+
+## Utilization Information
+
+## Top USers and Projects
+
+## Statistic Histograms
