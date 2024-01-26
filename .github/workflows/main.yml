@@ -17,9 +17,11 @@ jobs:
         with:
           hugo-version: "0.121.2"
           extended: true
-
-      - name: Build
+          
+      - name: Install Dependencies
         run: npm install
+        
+      - name: Build
         run: hugo --minify
 
       - name: Deploy
