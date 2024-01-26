@@ -55,6 +55,8 @@ Metric values colored in blue, however, usually report performance above the exp
 |Red|Warning|Metric value below configured warning threshold|Job performance impacted with high probability - Inspection recommended|
 |Dark Grey|Error|Metric value extremely above maximum configured threshold|Inspection required - Metric spikes in affected metrics can lead to errorneous average values|
 
+*Specific to the job view*: In the job view, the footprint component also allows for 1:1 rendering of HTML code, saved within the jobs' meta data secton of the database. This is intended for administrative messages towards the user who created the job, e.g. for displaying warning, hints, or contact information.
+
 ### Concurrent Jobs
 
 In the case of a shared job, this component will display all jobs, which were run on the same hardware at the same time. "At the same time" is defined as "has a starting or ending time, which lies between the starting and ending time of this job" for this purpose.
@@ -73,12 +75,38 @@ A [roofline plot]({{< ref "plots#roofline-plot" >}} "Roofline Plot") representin
 
 ## Metric Plot Table
 
+The views' middle section consists of [metric plots]({{< ref "plots#metric-plots" >}} "Metric Plot") for each metric selected in the "Metrics" selector, which defaults to all configured metrics.
+
+The data shown per metric defaults to the *smallest* available granularity with data of *all* nodes, but can be changed at will by using the drop down selectors above each plot. 
+
+Please note that statistical rendering (Min/Max/Avg) is not yet available for metric plots in this view.
+
 ### Tagging
 
-## Statistics Table
+Manual tagging of jobs is performed by using the "Manage Tags" option.
 
-### Statistics
+Existing tags are listed, and can be added to the jobs' database entry simply by pressing the respective button.
+
+The list can be filtered for specific tags by using the "Search Tags" prompt.
+
+New tags can be created by entering a new `type:name` combination in the search prompt, which will display a button for creating this new tag.
+
+## Statistics and Meta Data
+
+On the bottom of the job view, additional information in written and tabular form is collected.
+
+### Statistics Table
+
+The statistics table collects all metric statistical values (min, max, avg) for each allocated node and each granularity.
+
+The metrics to be displayed can be selected using the "Metrics" selection pop-up window. In the header, next to the metric name, a second drop down allows the selection of the displayed granularity.
+
+Core and Accelerator metrics default to their respective native granularities automatically.
 
 ### Job Script
 
+This tab displays the job script with which whis job was started on the systems.
+
 ### Slurm Info
+
+THis tab displays information returned drom the SLURM batch process management software.

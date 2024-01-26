@@ -9,8 +9,48 @@ weight: 16
 
 {{< alert >}}TODO: Add Picture{{< /alert >}}
 
+The status view is always called in respect to one specified cluster. It displays the current state of utilization of the respective clusters resources, as well as user and project top lists and distribution histograms of the allocated resources per job.
+
+*Please note:* By default, the periodic reload function is set to `2 Minutes`.
+
 ## Utilization Information
 
-## Top USers and Projects
+For each subluster, utilization is displayed in two parts rendered in one row.
+
+### Gauges
+
+Simple gauge representation of the current utilization of available resources
+
+|Field|Description|Note|
+|-----|-----------|----|
+|Allocated Nodes|Number of nodes currently allocated in respect to maximum available|-|
+|Flop Rate (Any)|Currently achieved flop rate in respect to theoretical maximum|Floprate calculated  as `f_any = (f_double x 2) + f_single`|
+|MemBW Rate|Currently achieved memory bandwidth in respect to technical maximum|-|
+
+### Roofline
+
+A [roofline plot]({{< ref "plots#roofline-plot" >}} "Roofline Plot") representing the utilization of available resources as the relation between computation and memory for each currently allocated, running job at the time of the latest data retrieval. Therefore, no time information is represented (all dots in blue, representing one job each).
+
+## Top Users and Projects
+
+The ten most active users or projects are rendered in a combination of pie chart and tabular legend. By default, the top ten users or projects with the most allocated, running jobs are listed.
+
+The selection can be changed directly in the tables header at `Number of ...`, and can be changed to
+
+* Jobs (Default)
+* Nodes
+* Cores
+* Accelerators
+
+The selection is saved for each user and cluster, and will select the last chosen type of list as default the next time this view is rendered.
+
+"User Names" and "Project Codes" are rendered as links, leading to [user job lists]({{< ref "userjobs" >}} "User Job List") or [project job lists]({{< ref "joblist" >}} "Project Jobs") with preset filters for cluster, entity ID, and `state == running`.
 
 ## Statistic Histograms
+
+Several [histrograms]({{< ref "plots#histograms" >}} "Histograms") depicting the utilization of the clusters resources, based on all currently running jobs are rendered here:
+
+* Duration Distribution
+* Number of Nodes Distribution
+* Number of Cores Distribution
+* Number of Accelerators Distribution
