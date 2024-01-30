@@ -7,8 +7,6 @@ tags: [Frontend, User]
 weight: 1
 ---
 
-{{< alert >}}TODO: Add Picture of settings page{{< /alert >}}
-
 The settings view allows [non-privileged users]({{< ref "roles#user" >}} "User Role") to customize how metric plots are rendered. This includes line width, number of plots per row (where applicable), whether backgrounds should be colored, and the color scheme of multi-line metric plots.
 
 [Privileged users]({{< ref "roles#administrator" >}} "Admin Role") will also find an [administrative interface]({{< ref "#administration-options" >}} "Administration Options") for handling local user accounts. This includes creating local accounts from the interface, editing user roles, listing and deleting existing users, generating Java Web Tokens, and delegating managed projects for [manager role]({{< ref "roles#manager" >}} "Manager Role") users.
@@ -106,6 +104,8 @@ New users can be created directly via the web interface. Please note that users 
 ||`Admin`|General Access.|
 
 ### Special Users
+
+{{< figure src="../figures/specialusers.png" alt="ClusterCockpit Special Users Table" width="100%" class="ccfigure mw-md" >}}
 
 This tables only displays users that were not created by LDAP syncronization, or have more roles than the default `user` role.
 
