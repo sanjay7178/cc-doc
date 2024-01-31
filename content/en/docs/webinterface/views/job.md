@@ -7,13 +7,17 @@ tags: [Frontend, User]
 weight: 4
 ---
 
-{{< alert >}}TODO: Add Picture{{< /alert >}}
+{{< figure src="../../figures/jobview.png" alt="Job View" width="100%" class="ccfigure mw-lg"
+    caption="Job View. This example shows a completed, shared job with lacking 'flops_any' performance."
+>}}
 
 The job view displays all data related to one specific job in full detail, and allows detailed inspection of all metrics at several scopes, as well as manual tagging of the job.
 
 ## Top Bar
 
 The top bar of each job view replicates the "Job Info" and "Footprint" seen in the job list, and additionally renders general metric information in specialized plots.
+
+For shared jobs, a list of jobs which run (or ran) concurrently is shown as well.
 
 ### Job Info
 
@@ -55,7 +59,21 @@ Metric values colored in blue, however, usually report performance above the exp
 |Red|Warning|Metric value below configured warning threshold|Job performance impacted with high probability - Inspection recommended|
 |Dark Grey|Error|Metric value extremely above maximum configured threshold|Inspection required - Metric spikes in affected metrics can lead to errorneous average values|
 
-*Specific to the job view*: In the job view, the footprint component also allows for 1:1 rendering of HTML code, saved within the jobs' meta data secton of the database. This is intended for administrative messages towards the user who created the job, e.g. for displaying warning, hints, or contact information.
+{{< alert >}} *Specific to the job view*: In the job view, the footprint component also allows for 1:1 rendering of HTML code, saved within the jobs' meta data secton of the database. This is intended for administrative messages towards the user who created the job, e.g. for displaying warning, hints, or contact information. {{< /alert >}}
+
+#### Examples
+
+{{< figure src="../../figures/footprint_good.png" alt="Footprint with good Performance" width="100%" class="ccfigure mw-xxs"
+    caption="Footprint of a job with performance well within expected parameters, 'mem_bw' even overperforms."
+>}}
+
+{{< figure src="../../figures/footprint_mixed.png" alt="Footprint with mixed Performance" width="100%" class="ccfigure mw-xxs"
+    caption="Footprint of an accelerated job with mixed performance parameters."
+>}}
+
+{{< figure src="../../figures/footprint_error.png" alt="Footprint with Errors" width="100%" class="ccfigure mw-xxs"
+    caption="Footprint of a job with performance averages way above the expected maxima - Look for artifacts!"
+>}}
 
 ### Concurrent Jobs
 
@@ -79,9 +97,11 @@ The views' middle section consists of [metric plots]({{< ref "plots#metric-plots
 
 The data shown per metric defaults to the *smallest* available granularity with data of *all* nodes, but can be changed at will by using the drop down selectors above each plot. 
 
-Please note that statistical rendering (Min/Max/Avg) is not yet available for metric plots in this view.
+{{< alert >}}*Please note:* The [statistical representation]({{< ref "plots#statistics-variant" >}} "Metric Statistics Plot") is not yet available for metric plots in this view. Jobs with high allocated node counts will be showing one line for *each core* if switched to this granilarity!{{< /alert >}}
 
 ### Tagging
+
+{{< figure src="../../figures/jobview_createtag.png" alt="Create Tag Window" width="100%" class="ccfigure mw-xxs">}}
 
 Manual tagging of jobs is performed by using the "Manage Tags" option.
 
@@ -93,7 +113,11 @@ New tags can be created by entering a new `type:name` combination in the search 
 
 ## Statistics and Meta Data
 
-On the bottom of the job view, additional information in written and tabular form is collected.
+{{< figure src="../../figures/jobview_statstable.png" alt="Job Voew Statistics Table" width="100%" class="ccfigure mw-lg"
+    caption="Statistics Table. 'cpu_power' granularity is set to 'socket'. Tabs above switch the contents to the job script or slurm information, both read froms the jobs metadata field."
+>}}
+
+On the bottom of the job view, additional information about the job is collected. By default, the statistics of selected metrics are shown in tabular form, each in their metrics' native granularity.
 
 ### Statistics Table
 
