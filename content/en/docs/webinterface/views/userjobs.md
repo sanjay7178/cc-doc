@@ -7,7 +7,9 @@ tags: [Frontend, User]
 weight: 2
 ---
 
-{{< alert >}}TODO: Add Picture{{< /alert >}}
+{{< figure src="../../figures/userjobs.png" alt="User Job View" width="100%" class="ccfigure mw-lg"
+    caption="User Job View. Similar to the general job list view, this view expands it by user-specific meta data, as well as distributions histograms."
+>}}
 
 The "User Jobs" View is available to admin users only and displays jobs of the selected user, i.e. jobs started by this users username on the cluster systems.
 

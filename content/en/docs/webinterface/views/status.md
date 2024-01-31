@@ -7,13 +7,13 @@ tags: [Frontend, User]
 weight: 16
 ---
 
-{{< alert >}}TODO: Add Picture{{< /alert >}}
-
 The status view is always called in respect to one specified cluster. It displays the current state of utilization of the respective clusters resources, as well as user and project top lists and distribution histograms of the allocated resources per job.
 
-*Please note:* By default, the periodic reload function is set to `2 Minutes`.
+{{< alert >}}*Please note:* By default, the periodic reload function is set to `2 Minutes`.{{< /alert >}}
 
 ## Utilization Information
+
+{{< figure src="../../figures/status_subcluster.png" alt="Subluster Urilization in Status view" width="100%" class="ccfigure mw-lg">}}
 
 For each subluster, utilization is displayed in two parts rendered in one row.
 
@@ -32,6 +32,8 @@ Simple gauge representation of the current utilization of available resources
 A [roofline plot]({{< ref "plots#roofline-plot" >}} "Roofline Plot") representing the utilization of available resources as the relation between computation and memory for each currently allocated, running job at the time of the latest data retrieval. Therefore, no time information is represented (all dots in blue, representing one job each).
 
 ## Top Users and Projects
+
+{{< figure src="../../figures/status_piecharts.png" alt="Subluster Urilization in Status view" width="100%" class="ccfigure mw-lg">}}
 
 The ten most active users or projects are rendered in a combination of pie chart and tabular legend. By default, the top ten users or projects with the most allocated, running jobs are listed.
 

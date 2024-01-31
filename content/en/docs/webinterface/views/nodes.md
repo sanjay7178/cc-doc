@@ -7,13 +7,17 @@ tags: [Frontend, User]
 weight: 12
 ---
 
-{{< alert >}}TODO: Add Picture{{< /alert >}}
+{{< figure src="../../figures/nodesview_table.png" alt="Nodes View" width="100%" class="ccfigure mw-lg"
+    caption="Nodes View. This example shows the last two hours of the 'clock' metric of eight nodes. Node 'f0147' of the 'main' partition has an average below the configured 'alert' threshold, and is colored in red."
+>}}
 
 The nodes view, or systems view, is always called in respect to one specified cluster. It displays the current state of *all* nodes in that cluster in respect to *one* selected metric, rendered in form of [metric plots]({{< ref "plots#metric-plots" >}} "Metric Plots"), and *independent* of job meta data, i.e. without consideration for job start and end timestamps.
 
-*Please note:* The X-Axis of all plots rendered in this view are relative to the latest data point received from the collector daemon, and thus, the time displayed reaches *backward* as indicated by negative X-axis labels.
+{{< alert >}}*Please note:* The X-Axis of all plots rendered in this view are relative to the latest data point received from the collector daemon, and thus, the time displayed reaches *backward* as indicated by negative X-axis labels.{{< /alert >}}
 
 ### Selection Bar
+
+{{< figure src="../../figures/nodesview_navbar.png" alt="Nodes View" width="100%" class="ccfigure mw-lg">}}
 
 Selections regarding the display, and update, of the plots rendered in the node table can be performed here:
 

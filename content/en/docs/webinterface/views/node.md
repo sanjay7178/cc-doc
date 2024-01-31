@@ -7,11 +7,13 @@ tags: [Frontend, User]
 weight: 13
 ---
 
-{{< alert >}}TODO: Add Picture{{< /alert >}}
+{{< figure src="../../figures/nodeview.png" alt="Node View" width="100%" class="ccfigure mw-lg"
+    caption="Nodes View. This example shows the last twelve hours of all metrics of the specified node 'a0122'. The metric 'acc_mem_used' has an average below the configured 'alert' threshold, and is colored in red."
+>}}
 
 The node view is always called in respect to one specified cluster and one specified node (host). It displays the current state of *all* metrics for that node, rendered in form of [metric plots]({{< ref "plots#metric-plots" >}} "Metric Plots"), and *independent* of job meta data, i.e. without consideration for job start and end timestamps.
 
-*Please note:* The X-Axis of all plots rendered in this view are relative to the latest data point received from the collector daemon, and thus, the time displayed reaches *backward* as indicated by negative X-axis labels.
+{{< alert >}}*Please note:* The X-Axis of all plots rendered in this view are relative to the latest data point received from the collector daemon, and thus, the time displayed reaches *backward* as indicated by negative X-axis labels.{{< /alert >}}
 
 ### Selection Bar
 
