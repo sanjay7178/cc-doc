@@ -113,7 +113,7 @@ New tags can be created by entering a new `type:name` combination in the search 
 
 ## Statistics and Meta Data
 
-{{< figure src="../../figures/jobview_statstable.png" alt="Job Voew Statistics Table" width="100%" class="ccfigure mw-lg"
+{{< figure src="../../figures/jobview_statstable.png" alt="Job View Statistics Table" width="100%" class="ccfigure mw-lg"
     caption="Statistics Table. 'cpu_power' granularity is set to 'socket'. Tabs above switch the contents to the job script or slurm information, both read froms the jobs metadata field."
 >}}
 
