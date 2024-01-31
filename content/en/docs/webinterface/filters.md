@@ -79,7 +79,8 @@ Select one or more job tags, and display only jobs matching the selected tags.
 
 Select a named node or specify an amount of used resources, and display only jobs matching the selected criteria.
 
-*Options:* 
+*Options:*
+
 * Named node free text field: Enter a hostname here to only return jobs which were ran on this node
 * Range selectors: Select a range of allocated job resources ranging from the minimal to the maximum configured resource count of all clusters. If the [cluster filter]({{< ref "#clusterpartition" >}} "Cluster Filter") is set, the ranges are limited to the respective resources' configuration. Available resources are:
   * Nodes
@@ -100,7 +101,7 @@ Specify ranges of metric statistics, and display only jobs matching the selected
 
 ### Start Time Quick Selections
 
-*Please note:* Not available in all views!
+{{< alert >}}*Please note:* Not available in all views!{{< /alert >}}
 
 Quickly select a preconfigured range of job start times. Will display as named [start time filter]({{< ref "#starttime" >}} "Starttime Filter").
 

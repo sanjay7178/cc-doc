@@ -79,7 +79,7 @@ A roofline plot, or roofline model, represents the utilization of available reso
 
 Roofline models rendered as dotted plots display the utilization of hardware resources over time.
 
-*Please Note:* The roofline models rendered in the status view are *not* job-derived, but display the utilization of single nodes at the moment of data-collection. Therefore, no time information is required, and alle dots are colored blue.
+{{< alert >}}*Please Note:* The roofline models rendered in the status view are *not* job-derived, but display the utilization of single nodes at the moment of data-collection. Therefore, no time information is required, and alle dots are colored blue.{{< /alert >}}
 
 #### Example
 

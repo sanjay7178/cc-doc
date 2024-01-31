@@ -87,7 +87,9 @@ The settings view allows [non-privileged users]({{< ref "roles#user" >}} "User R
 
 ### Create User
 
-New users can be created directly via the web interface. Please note that users can also be imported via LDAP or via JWT Login.
+New users can be created directly via the web interface.
+
+{{< alert >}} *Please note:* Users are usually imported via LDAP on ClusterCockpit startup.{{< /alert >}}
 
 |Field|Option|Note|
 |-----|------|----|
