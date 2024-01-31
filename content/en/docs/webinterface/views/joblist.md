@@ -7,11 +7,17 @@ tags: [Frontend, User]
 weight: 3
 ---
 
-{{< alert >}}TODO: Add Picture{{< /alert >}}
+{{< figure src="../../figures/joblist.png" alt="Job View" width="100%" class="ccfigure mw-lg"
+    caption="Job List. In this example, the optional footprint is displayed, two filters are active, and the table is refreshed every minute. The first job has a high node count, therefore the plots are rendered in the statistics variant. The 'mem_bw' metric likely has artifacts as shown by the grey footprint. The second job has tags and displays less than optimal performance in the 'flops_any' metric, coloring the respective plot background in orange."
+>}}
 
-The primary view of ClusterCockpits webinterface is the tabular listing of jobs, which displays a general overview of the jobs running on your systems.
+The primary view of ClusterCockpits webinterface is the tabular listing of jobs, which displays various information about the jobs returned by the selected filters. THis information includes the jobs' full meta data, such as runtime or job state, as well as an optinal footprint, allowing quick assessment of the jobs performance.
+
+Most importantly, the list displays a selectable array of metrics as time dependent metric plots, which allows details insicght into the jobs performance at a glance.
 
 ## Job List Toolbar
+
+{{< figure src="../../figures/joblist_toolbar.png" alt="Job View" width="100%" class="ccfigure mw-md">}}
 
 Several options allow configuration of the displayed data, which are also persisted for each user individually, either for general usage or by cluster.
 
@@ -26,15 +32,23 @@ Basic selection of sorting parameter and direction. By default, jobs are sorted 
 * Average Memory Bandwidth
 * Average Network Bandwidth
 
+Switching of the sort direction is achieved by clicking on the arrow icon next to the desired sorting parameter.
+
 ### Metrics
 
 Selection of metrics shown in the tabular view for each job. The list is compiled from all available configured metrics of the ClusterCockpit instance, and the tabular view will be updated upon applying the changes.
+
+{{< figure src="../../figures/metrics_clusteravail.png" alt="Job View" width="100%" class="ccfigure mw-xxs">}}
 
 In addition to the metric names themselves, the availability by cluster is indicated as comma seperated list next to the metric identifier. This information will change to the availablility *by partition* if the cluster filter is active.
 
 It is furthermore possible to edit the order of the selected metrics. This can be achieved by dragging and dropping the metric selectors to the desired order, where the topmost metric will be displayed next to the "Job Info" column, and additional metrics will be added on the right side.
 
 Lastly, the optional "Footprint" Column can be activated (and deactivated) here. It will always ber endered next to the "Job Info" column, while metrics start right of the "Footprint" column, if activated.
+
+### Job Count
+
+The total number of jobs returned by the backend.
 
 ### Filters
 
@@ -99,6 +113,8 @@ Metric values colored in blue, however, usually report performance above the exp
 |Yellow|Caution|Metric value below configured caution threshold|Job performance might be impacted|
 |Red|Warning|Metric value below configured warning threshold|Job performance impacted with high probability - Inscpection recommended|
 |Dark Grey|Error|Metric value extremely above maximum configured threshold|Inspection required - Metric spikes in affected metrics can lead to errorneous average values|
+
+{{< alert >}}For examples, see images in the [job view]({{< ref "job#footprint" >}} "Job View") section.{{< /alert >}}
 
 ### Metric Row
 
