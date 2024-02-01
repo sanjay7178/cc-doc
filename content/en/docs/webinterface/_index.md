@@ -2,7 +2,7 @@
 title: Web Interface
 description: How to use the web interface?
 categories: [cc-backend]
-tags: [Frontend, User]
+tags: [Frontend, General]
 weight: 3
 ---
 
