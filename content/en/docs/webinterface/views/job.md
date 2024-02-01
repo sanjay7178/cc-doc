@@ -3,11 +3,11 @@ title: Job
 description: >
   Detailed Single Job Information View
 categories: [cc-backend]
-tags: [Frontend, User]
+tags: [Frontend, User, Manager, Support, Admin]
 weight: 4
 ---
 
-{{< figure src="../../figures/jobview.png" alt="Job View" width="100%" class="ccfigure mw-lg"
+{{< figure src="../../figures/jobview.png" alt="Job View" width="100%" class="ccfigure mw-xl"
     caption="Job View. This example shows a completed, shared job with lacking 'flops_any' performance."
 >}}
 
@@ -29,7 +29,7 @@ Identical to the job list equivalent, this component displays meta data containi
 |Job Name|`myJobName`|The name of the job as supplied by the user|-|
 |Username|`abcd10`|The username of the submitting user|[User Jobs]({{< ref "userjobs" >}} "User Jobs")|
 |Project|`abcd`|The name of the usergroup the submitting user belongs to|[Joblist with preset Filter]({{< ref "#filters" >}} "Job List")|
-|Resources|`n100`|Indicator for the allocated resources. Single resources will be displayed by name, i.e. exclusive single.node jobs or shared resources. Multiples of resources will be indicatet by icons for nodes, CPU Threads, and accelerators.|-|
+|Resources|`n100`|Indicator for the allocated resources. Single resources will be displayed by name, i.e. exclusive single-node jobs or shared resources. Multiples of resources will be indicated by icons for nodes, CPU Threads, and accelerators.|-|
 |Partition|`main`|The cluster partition this job was startet at|-|
 |Start Timestamp|`10.1.2024, 10:00:00`|The epoch timestamp the job was started at, formatted for human readability|-|
 |Duration|`0:21:10`|The runtime of the job, will be updated for running jobs on reload. Additionally indicates the [state]({{< ref "filters#job-states" >}} "Job State") of the job as colored pill|-|
@@ -37,7 +37,7 @@ Identical to the job list equivalent, this component displays meta data containi
 
 ### Footprint
 
-Identical to the job list equivalent, this component will show base metrics for job performance at a glance, and will hint to performance (and performance problems) in regard to configurable metric thresholds. In contrast to the job list, it is always active and shown in the detailed job view.
+Identical to the job list equivalent, this component will show base metrics for job performance at a glance, and will hint to job quality and problems in regard to configurable metric thresholds. In contrast to the job list, it is always active and shown in the detailed job view.
 
 |Field|Description|Note|
 |-----|-----------|----|
@@ -47,13 +47,13 @@ Identical to the job list equivalent, this component will show base metrics for 
 |mem_used|Maximum memory used|Non-GPU Cluster only|
 |acc_utilization|Average accelerator utilization|GPU Cluster Only|
 
-Colors and icons differentiate between the different warning states based on the configured threshold of the metrics. Reported metric values below the warning threshold simply report bad performance in one or more metrics, and should therefore be inspected by the user for future performance improvement.
+Colors and icons differentiate between the different warning states based on the configured thresholds of the metrics. Reported metric values below the warning threshold simply report bad performance in one or more metrics, and should therefore be inspected by the user for future performance improvement.
 
 Metric values colored in blue, however, usually report performance above the expected levels - Which is exactly why these metrics should be inspected as well. The "maximum" thresholds are often the theoretically achievable performance by the respective hardware component, but rarely are they *actually* reached. Inspecting jobs reporting back such levels can lead to averaging errors, unrealistic spikes in the metric data or even bugs in the code of ClusterCockpit.
 
 |Color|Level|Description|Note|
 |-----|-----|-----------|----|
-|Blue|Info|Metric value below or slightly above maximum configured threshold|Job performance above expected parameters - Inspection recommended|
+|Blue|Info|Metric value below or slightly above (<= 5%) maximum configured threshold|Job performance above expected parameters - Inspection recommended|
 |Green|OK|Metric value below normal configured threshold|Job performance within expected parameters|
 |Yellow|Caution|Metric value below configured caution threshold|Job performance might be impacted|
 |Red|Warning|Metric value below configured warning threshold|Job performance impacted with high probability - Inspection recommended|
@@ -95,13 +95,13 @@ A [roofline plot]({{< ref "plots#roofline-plot" >}} "Roofline Plot") representin
 
 The views' middle section consists of [metric plots]({{< ref "plots#metric-plots" >}} "Metric Plot") for each metric selected in the "Metrics" selector, which defaults to all configured metrics.
 
-The data shown per metric defaults to the *smallest* available granularity with data of *all* nodes, but can be changed at will by using the drop down selectors above each plot. 
+The data shown per metric defaults to the *smallest* available granularity of the metric with data of *all* nodes, but can be changed at will by using the drop down selectors above each plot. 
 
 {{< alert >}}*Please note:* The [statistical representation]({{< ref "plots#statistics-variant" >}} "Metric Statistics Plot") is not yet available for metric plots in this view. Jobs with high allocated node counts will be showing one line for *each core* if switched to this granilarity!{{< /alert >}}
 
 ### Tagging
 
-{{< figure src="../../figures/jobview_createtag.png" alt="Create Tag Window" width="100%" class="ccfigure mw-xxs">}}
+{{< figure src="../../figures/jobview_createtag.png" alt="Create Tag Window" width="100%" class="ccfigure mw-xs">}}
 
 Manual tagging of jobs is performed by using the "Manage Tags" option.
 
@@ -114,7 +114,7 @@ New tags can be created by entering a new `type:name` combination in the search 
 ## Statistics and Meta Data
 
 {{< figure src="../../figures/jobview_statstable.png" alt="Job View Statistics Table" width="100%" class="ccfigure mw-lg"
-    caption="Statistics Table. 'cpu_power' granularity is set to 'socket'. Tabs above switch the contents to the job script or slurm information, both read froms the jobs metadata field."
+    caption="Statistics Table. 'cpu_power' granularity is set to 'socket'. Tabs above switch the contents to the job script or slurm information, both read from the jobs metadata field."
 >}}
 
 On the bottom of the job view, additional information about the job is collected. By default, the statistics of selected metrics are shown in tabular form, each in their metrics' native granularity.

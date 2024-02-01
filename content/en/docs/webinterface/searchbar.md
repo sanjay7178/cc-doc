@@ -1,27 +1,27 @@
 ---
 title: Searchbar
 description: >
-  Searchbar Functionality
+  Toplevel Searchbar Functionality
 categories: [cc-backend]
-tags: [Frontend, User]
+tags: [Frontend, General]
 weight: 2
 ---
 
-{{< figure src="../figures/searchbar.png" caption="ClusterCockpit Searchbar" alt="ClusterCockpit Searchbar" width="100%" class="ccfigure mw-xxs" >}}
+{{< figure src="../figures/searchbar.png" caption="ClusterCockpit Searchbar" alt="ClusterCockpit Searchbar" width="100%" class="ccfigure mw-xs" >}}
 
-The top searchbar will handle page wide searches either by entering a searchterm directly as `<query>`, or by using a "search tag" implemented in the form of `<tag>:<query>`. Entering a searchterm directly will start a hierarchical search which will return the first match in the hierarchy (see table below). It is recommended to supply the search with a tag to specify the searched entity. For example, `jobName:myJobName` will specifically search for all jobs which have the queried string (or a part thereof) in their metadata `jobName` field. For all tags with examples, see the table below.
+The top searchbar will handle page wide searches either by entering a searchterm directly as `<query>`, or by using a "keyword" implemented in the form of `<keyword>:<query>`. Entering a searchterm directly will start a hierarchical search which will return the first match in the hierarchy (see table below). It is recommended to supply the search with a keyword to specify the searched entity. For example, `jobName:myJobName` will specifically search for all jobs which have the queried string (or a part thereof) in their metadata `jobName` field. For all keywords with examples, see the table below.
 
-Both tags and queries are trimmed of all spaces before performing the search, returning the same results independently of location and number of spaces, e.g. ` name : Paul` and `name:  paul  ` are both handled identically.
+Both keywords and queries are trimmed of all spaces before performing the search, returning the same results independently of location and number of spaces, e.g. ` name : Paul` and `name:  paul  ` are both handled identically.
 
 Unprocessable queries will return a message detailing the cause of the error.
 
-### Available Tags
+### Available Keywords
 
-Hovering over the information icon right of the query field will list all query types as well.
+{{< alert >}}*Please note:* Hovering over the information icon right of the query field will list all keywords in the webinterface. {{< /alert >}}
 
-|Tag|Example Query|Destination|Note|
+|Keyword|Example Query|Destination|Note|
 |---|-------------|-----------|----|
-|No Tag Used | `abcd100`           | [Joblist]({{< ref "views/joblist" >}} "Joblist") or [User Joblist]({{< ref "views/userjobs" >}} "User Joblist") | Performs hierarchical search `jobId -> username -> name -> projectId -> jobName` |
+|No Keyword Used | `abcd100`           | [Joblist]({{< ref "views/joblist" >}} "Joblist") or [User Joblist]({{< ref "views/userjobs" >}} "User Joblist") | Performs hierarchical search `jobId -> username -> name -> projectId -> jobName` |
 |JobId       | `jobId:123456`      | [Joblist]({{< ref "views/joblist" >}} "Joblist")         | Allows multiple identical matches, e.g. JobIds from different clusters |
 |JobName     | `jobName:myJobName` | [Joblist]({{< ref "views/joblist" >}} "Joblist")         | Works with partial queries. Allows multiple identical matches, e.g. JobNames from different clusters |
 |ProjectId   | `projectId:abcd100` | [Joblist]({{< ref "views/joblist" >}} "Joblist")         | All Jobs of the given project |

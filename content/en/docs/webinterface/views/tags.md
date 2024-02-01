@@ -1,13 +1,13 @@
 ---
 title: Tags
 description: >
-  Active Tags Used In Frontend
+  Lists Active Tags Used in the Frontend
 categories: [cc-backend]
-tags: [Frontend, User]
+tags: [Frontend, User, Manager, Support, Admin]
 weight: 10
 ---
 
-{{< figure src="../../figures/tags.png" alt="Tag List View" width="100%" class="ccfigure mw-sm">}}
+{{< figure src="../../figures/tags.png" alt="Tag List View" width="100%" class="ccfigure mw-md">}}
 
 This view lists all tags currently used within the ClusterCockpit instance:
 

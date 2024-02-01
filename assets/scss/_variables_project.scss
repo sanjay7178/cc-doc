@@ -26,22 +26,31 @@ figure.ccfigure > figcaption > p {
     text-align: left;
 }
 
-figure.mw-lg > img {
+figure.mw-xl > img {
     max-width: 992px;
 }
 
-figure.mw-md > img {
+/* 224px less */
+figure.mw-lg > img {
     max-width: 768px;
 }
 
-figure.mw-sm > img {
+/* 192px less */
+figure.mw-md > img {
     max-width: 576px;
 }
 
-figure.mw-xs > img {
-    max-width: 490px;
+/* 96px less */
+figure.mw-sm > img {
+    max-width: 480px;
 }
 
-figure.mw-xxs > img {
+/* 96px less */
+figure.mw-xs > img {
     max-width: 384px;
+}
+
+/* 48px less */
+figure.mw-xxs > img {
+    max-width: 336px;
 }

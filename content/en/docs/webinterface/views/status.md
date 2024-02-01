@@ -3,7 +3,7 @@ title: Status
 description: >
   Hardware Usage Information
 categories: [cc-backend]
-tags: [Frontend, User]
+tags: [Frontend, Admin]
 weight: 16
 ---
 
@@ -13,7 +13,7 @@ The status view is always called in respect to one specified cluster. It display
 
 ## Utilization Information
 
-{{< figure src="../../figures/status_subcluster.png" alt="Subluster Urilization in Status view" width="100%" class="ccfigure mw-lg">}}
+{{< figure src="../../figures/status_subcluster.png" alt="Subluster Urilization in Status view" width="100%" class="ccfigure mw-xl">}}
 
 For each subluster, utilization is displayed in two parts rendered in one row.
 
@@ -33,7 +33,7 @@ A [roofline plot]({{< ref "plots#roofline-plot" >}} "Roofline Plot") representin
 
 ## Top Users and Projects
 
-{{< figure src="../../figures/status_piecharts.png" alt="Subluster Urilization in Status view" width="100%" class="ccfigure mw-lg">}}
+{{< figure src="../../figures/status_piecharts.png" alt="Subluster Urilization in Status view" width="100%" class="ccfigure mw-xl">}}
 
 The ten most active users or projects are rendered in a combination of pie chart and tabular legend. By default, the top ten users or projects with the most allocated, running jobs are listed.
 
@@ -46,7 +46,11 @@ The selection can be changed directly in the tables header at `Number of ...`, a
 
 The selection is saved for each user and cluster, and will select the last chosen type of list as default the next time this view is rendered.
 
+Hovering over one of the pie chart fractions will display a legend featuring the identifier and value of the selected parameter.
+
 "User Names" and "Project Codes" are rendered as links, leading to [user job lists]({{< ref "userjobs" >}} "User Job List") or [project job lists]({{< ref "joblist" >}} "Project Jobs") with preset filters for cluster, entity ID, and `state == running`.
+
+{{< alert >}}*Please note:* The legend colors are fixed by their position, and *not* by their respective identifier. This means that the orange fraction will always be the largest fraction, even if the contributing user or project changes.{{< /alert >}}
 
 ## Statistic Histograms
 
