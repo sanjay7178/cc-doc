@@ -1,7 +1,10 @@
 ---
-title: Configuration
+title: Environment
 description: >
-  ClusterCockpit Configuration Option References.
+  ClusterCockpit Environment Variables
+categories: [cc-backend]
+tags: [Backend]
+weight: 3
 ---
 
 ## Environment Variables

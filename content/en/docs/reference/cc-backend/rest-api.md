@@ -3,6 +3,9 @@ title: REST API
 type: "swagger"
 description: >
   CC-Backend Restful API Endpoint description.
+categories: [cc-backend]
+tags: [Backend]
+weight: 4
 ---
 ## Usage of Swagger UI
 

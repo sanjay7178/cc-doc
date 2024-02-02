@@ -2,6 +2,9 @@
 title: Configuration
 description: >
   ClusterCockpit Configuration Option References.
+categories: [cc-backend]
+tags: [Backend]
+weight: 2
 ---
 
 ## Intro
