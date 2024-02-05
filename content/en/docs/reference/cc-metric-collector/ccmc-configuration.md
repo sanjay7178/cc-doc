@@ -1,7 +1,7 @@
 ---
 title: Commands
 description: >
-  ClusterCockpit Metric Store References.
+  ClusterCockpit Metric Collector References.
 ---
 
 {{% pageinfo %}}
