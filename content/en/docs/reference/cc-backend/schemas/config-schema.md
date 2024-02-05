@@ -6,7 +6,16 @@ tags: [Backend]
 weight: 1
 ---
 
-# cc-backend configuration file schema
+A detailed description of each of the application configuration options can be found in the [config documentation]({{< ref "configuration" >}} "CC-Backend Configuration").
+
+The following schema in its raw form can be found in the [ClusterCockpit GitHub](https://github.com/ClusterCockpit/cc-backend/tree/master/pkg/schema/schemas) repository.
+
+{{< alert title="Manual Updates">}}
+  Changes to the original JSON schema found in the repository are not automatically rendered in this reference documentation.</br></br>
+  **Last Update:** 02.02.2024
+{{< /alert >}}
+
+## cc-backend configuration file schema
 
 - [1. [Optional] Property cc-backend configuration file schema > addr](#addr)
 - [2. [Optional] Property cc-backend configuration file schema > user](#user)

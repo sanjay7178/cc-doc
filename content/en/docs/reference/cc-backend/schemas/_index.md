@@ -15,3 +15,11 @@ ClusterCockpit Schema References for
 * Units
 * Job Archive Job Metadata
 * Job Archive Job Metricdata
+
+The schemas in their raw form can be found in the [ClusterCockpit GitHub](https://github.com/ClusterCockpit/cc-backend/tree/master/pkg/schema/schemas) repository.
+
+{{< alert title="Manual Updates">}}
+  Changes to the original JSON schemas found in the repository are not automatically rendered in this reference documentation.</br></br>
+  The raw JSON schemas are parsed and rendered for better readability using the [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) utility.</br></br>
+  **Last Update:** 02.02.2024
+{{< /alert >}}

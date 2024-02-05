@@ -6,7 +6,14 @@ tags: [Backend]
 weight: 3
 ---
 
-# Job metric data list
+The following schema in its raw form can be found in the [ClusterCockpit GitHub](https://github.com/ClusterCockpit/cc-backend/tree/master/pkg/schema/schemas) repository.
+
+{{< alert title="Manual Updates">}}
+  Changes to the original JSON schema found in the repository are not automatically rendered in this reference documentation.</br></br>
+  **Last Update:** 02.02.2024
+{{< /alert >}}
+
+## Job metric data list
 
 - [1. [Required] Property Job metric data list > mem_used](#mem_used)
   - [1.1. [Required] Property Job metric data list > mem_used > node](#mem_used_node)
