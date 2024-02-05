@@ -1,12 +1,68 @@
 ---
-title: Commands
+title: Command Line
 description: >
-  ClusterCockpit Backend References.
+  ClusterCockpit Command Line Options
+categories: [cc-backend]
+tags: [Backend]
+weight: 1
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+This page describes the command line options for the `cc-backend` executable.
 
-If your project has an API, configuration, or other reference - anything that users need to look up that’s at an even lower level than a single task - put (or link to it) here. You can serve and link to generated reference docs created using Doxygen,
-Javadoc, or other doc generation tools by putting them in your `static/` directory. Find out more in [Adding static content](https://docsy.dev/docs/adding-content/content/#adding-static-content). For OpenAPI reference, Docsy also provides a [Swagger UI layout and shortcode](https://www.docsy.dev/docs/adding-content/shortcodes/#swaggerui) that renders [Swagger UI](https://swagger.io/tools/swagger-ui/) using any OpenAPI YAML or JSON file as source.
+---
+
+```
+-add-user <username>:[admin,support,manager,api,user]:<password>
+```
+
+*Function:* Adds a new user to the database. Only one role can be assigned.
+
+*Argument:* `<username>:[admin,support,manager,api,user]:<password>`
+
+*Example:* `-add-user abcduser:manager:somepass`
+
+---
+
+```txt
+  -config config.json
+      Specify alternative path to config.json (default "./config.json")
+
+  -del-user username
+      Remove user by username
+
+  -dev
+      Enable development components: GraphQL Playground and Swagger UI
+
+  -gops
+      Listen via github.com/google/gops/agent (for debugging)
+
+  -import-job <path-to-meta.json>:<path-to-data.json>,...
+      Import a job. Argument format: <path-to-meta.json>:<path-to-data.json>,...
+
+  -init
+      Setup var directory, initialize swlite database file, config.json and .env
+
+  -init-db
+      Go through job-archive and re-initialize the 'job', 'tag', and 'jobtag' tables (all running jobs will be lost!)
+
+  -jwt username
+      Generate and print a JWT for the user specified by its username
+
+  -logdate
+      Set this flag to add date and time to log messages
+
+  -loglevel [debug,info,warn (default),err,fatal,crit]
+      Sets the logging level: [debug,info,warn,err,crit] (default: "info")
+
+  -migrate-db
+      Migrate database to supported version and exit
+
+  -server
+      Start a server, continues listening on port after initialization and argument handling
+
+  -sync-ldap
+      Sync the 'user' table with ldap
+
+  -version
+      Show version information and exit
+```

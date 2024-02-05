@@ -1,15 +1,17 @@
 ---
 title: User Jobs
 description: >
-  All Jobs As Table Of A Selected User
+  All Jobs as Table of a Selected User
 categories: [cc-backend]
-tags: [Frontend, User]
+tags: [Frontend, Admin, Support, Manager]
 weight: 2
 ---
 
-{{< alert >}}TODO: Add Picture{{< /alert >}}
+{{< figure src="../../figures/userjobs.png" alt="User Job View" width="100%" class="ccfigure mw-xl"
+    caption="User Job View. Similar to the general job list view, this view expands it by user-specific meta data, as well as distribution histograms."
+>}}
 
-The "User Jobs" View is available to admin users only and displays jobs of the selected user, i.e. jobs started by this users username on the cluster systems.
+The "User Jobs" View is only available to management and supporting staff and displays jobs of the selected user, i.e. jobs started by this users username on the cluster systems.
 
 The view consists of three components: Basic Information about the users jobs, selectable statistic histograms of the jobs, and a generalized job list.
 

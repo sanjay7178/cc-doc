@@ -1,6 +1,8 @@
 ---
 title: Backend
 description: ClusterCockpit Backend References.
+categories: [cc-backend]
+tags: [Backend]
 weight: 1
 ---
 

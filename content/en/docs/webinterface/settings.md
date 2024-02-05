@@ -3,23 +3,21 @@ title: Settings
 description: >
   Webinterface Settings Page
 categories: [cc-backend]
-tags: [Frontend, User]
+tags: [Frontend, General, Admin]
 weight: 1
 ---
 
-{{< alert >}}TODO: Add Picture of settings page{{< /alert >}}
-
 The settings view allows [non-privileged users]({{< ref "roles#user" >}} "User Role") to customize how metric plots are rendered. This includes line width, number of plots per row (where applicable), whether backgrounds should be colored, and the color scheme of multi-line metric plots.
 
-[Privileged users]({{< ref "roles#administrator" >}} "Admin Role") will also find an [administrative interface]({{< ref "#administration-options" >}} "Administration Options") for handling local user accounts. This includes creating local accounts from the interface, editing user roles, listing and deleting existing users, generating Java Web Tokens, and delegating managed projects for [manager role]({{< ref "roles#manager" >}} "Manager Role") users.
+[Privileged users]({{< ref "roles#administrator" >}} "Admin Role") will also find an [administrative interface]({{< ref "#administration-options" >}} "Administration Options") for handling local user accounts. This includes creating local accounts from the interface, editing user roles, listing and deleting existing users, generating JSON Web Tokens for API usage, and delegating managed projects for [manager role]({{< ref "roles#manager" >}} "Manager Role") users.
 
 ## Plotting Options
 
 |Field|Options|Note|
 |---|---|---|
-|Line Width|# Pixels|Width of the lines in the timeseries plots.|
-|Plots Per Row|# Plots|How many plots to show next to each other on pages such as /monitoring/job/, /monitoring/system/...|
-|Colored Backgrounds|Y/N|Color plot backgrounds indicating mean values within warning thresholds|
+|Line Width|# Pixels|Width of the lines in the timeseries plots|
+|Plots Per Row|# Plots|How many plots to show next to each other on pages such as the [job]({{< ref "job" >}} "Job View") or [nodes]({{< ref "nodes" >}} "Nodes View") views|
+|Colored Backgrounds|Yes / No|Color plot backgrounds indicating mean values within warning thresholds|
 |Color Scheme|See Below|Render multi-line metric plots in different color ranges|
 
 ### Color Schemes
@@ -89,27 +87,37 @@ The settings view allows [non-privileged users]({{< ref "roles#user" >}} "User R
 
 ### Create User
 
-New users can be created directly via the web interface. Please note that users can also be imported via LDAP or via JWT Login.
+New users can be created directly via the web interface. On successful creation a green respons message will be returned, and the user is directly visible in the "Special Users" table - If the user has at least two roles, or a single role other than `user`.
+
+Error messages will also be displayd if the user creation process failed. No user account is saved to the database in this case.
+
+{{< alert >}} *Please note:* Users are usually imported via LDAP on ClusterCockpit startup.{{< /alert >}}
 
 |Field|Option|Note|
 |-----|------|----|
-|Username (ID)|`string`|Required, Must be unique|
-|Password|`string`|Only API users are allowed to have a blank password. Users with a blank password can only authenticate via Tokens.|
-|Project|`string`|Only manager users can have a project.|
-|Name|`string`|Name of the user, optional, can be blank.|
-|Email Address|`string`|Users email, optional, can be blank.|
-|Role|Select one|See [roles]({{< ref "roles" >}} "Roles") for more detailed information.|
-||`API`|Allowed to interact with REST API.|
-||`User`|Same as if created via LDAP sync.|
-||`Manager`|Allows to inspect jobs and users of given project.|
-||`Support`|Allows to inspect jobs and users of all projects. No Admin View or Setting Access.|
-||`Admin`|General Access.|
+|Username (ID)|`string`|**Required**, must be unique|
+|Password|`string`|Only API users are allowed to have a blank password, users with a blank password can only authenticate via JW tokens|
+|Project|`string`|Only manager users can have a project|
+|Name|`string`|Name of the user, optional, can be blank|
+|Email Address|`string`|Users email, optional, can be blank|
+|Role|Select one|See [roles]({{< ref "roles" >}} "Roles") for more detailed information|
+||`API`|Allowed to interact with REST API|
+||`User`|Same as if created via LDAP sync|
+||`Manager`|Allows to inspect jobs and users of given project|
+||`Support`|Allows to inspect jobs and users of all projects, has no admin view or settings access|
+||`Admin`|General access|
 
 ### Special Users
 
-This tables only displays users that were not created by LDAP syncronization, or have more roles than the default `user` role.
+{{< figure src="../figures/specialusers.png" alt="ClusterCockpit Special Users Table" width="100%" class="ccfigure mw-lg" >}}
 
-User accounts can be deleted here. Additionally, JTW tokens for specific users can be generated here as well.
+This table does not contain users who only have `user` as their only role saved in the database. This is the case for all users created by LDAP import, and thus, these users will not be shown here. However, LDAP users' roles can still be [edited]({{< ref "#edit-user-roles" >}} "Edit Roles"), and will appear in the table as soon as a authority higher than `user` or two authorities were granted.
+
+All other special case users, e.g. new users manually created with `support` role, will appear in the list.
+
+User accounts can be deleted by pressing the respective function displayed for each user entry - A verification pop-up window will appear to stop accidental user deletion.
+
+Additionally, JWT tokens for specific users can be generated here as well.
 
 |Column|Example|Description|
 |---|---|---|
@@ -118,8 +126,8 @@ User accounts can be deleted here. Additionally, JTW tokens for specific users c
 |Project(s)|`abcd`|Managed project(s) of this user|
 |Email|`demo@demo.com`|Email adress of this user|
 |Roles|`admin,api`|Role(s) of this user|
-|JWT|-|Generate a JWT for this user for use with the CC REST API endpoints|
-|Delete|-|Delete this user|
+|JWT|Press button to reveal freshly generated token|Generate a JWT for this user for use with the CC REST API endpoints|
+|Delete|Press button to verify deletion|Delete this user|
 
 ### Edit User Role
 
