@@ -1,6 +1,8 @@
 ---
 title: Metric Store
-description: ClusterCockpit Metric Store References.
+description: ClusterCockpit Metric Store References
+categories: [cc-metric-store]
+tags: [Backend]
 weight: 2
 ---
 
