@@ -5,16 +5,19 @@ description: >
 categories: [cc-backend]
 tags: [Developer]
 ---
+
 ## Release versions
 
-Versions are marked according to [semantic versioning] (https://semver.org).
+Versions are marked according to [semantic versioning](https://semver.org).
 Each version embeds the following static assets in the binary:
+
 * Web frontend with javascript files and all static assets
 * Golang template files for server-side rendering
 * JSON schema files for validation
 * Database migration files
 
 The remaining external assets are:
+
 * The SQL database used
 * The job archive
 * The configuration files `config.json` and `.env`
@@ -31,6 +34,7 @@ from the previous to the latest version.
 ## Versioning of APIs
 
 cc-backend provides two API backends:
+
 * A REST API for querying jobs.
 * A GraphQL API for data exchange between web frontend and cc-backend.
 

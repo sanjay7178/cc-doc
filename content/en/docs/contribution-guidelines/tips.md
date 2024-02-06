@@ -19,7 +19,7 @@ frontend disable embedding of static assets in `config.json`:
 Start the node build process (in directory `./web/frontend`) in development mode:
 
 ```sh
-$ npm run dev
+> npm run dev
 ```
 
 This will start the build process in listen mode. Whenever you change a source
@@ -37,6 +37,7 @@ Because the files are still served by ./cc-backend you have to reload the view
 explicitly in your browser.
 
 A common setup is to have three terminals open:
+
 * One running cc-backend (working directory repository root): `./cc-backend -server -dev`
 * Another running npm in developer mode (working directory `./web/frontend`): `npm run dev`
 * And the last one editing the frontend source files

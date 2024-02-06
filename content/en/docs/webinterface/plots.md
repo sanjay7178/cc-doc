@@ -114,6 +114,7 @@ By clicking on one of the two legends, the respective dataset will be hidden. Th
 {{< figure src="../figures/polarplot.png" alt="Polar Plot Example" width="100%" class="ccfigure mw-xxs"
     caption="In this example, the selected job performs quite well, as depicted in the acceptable and equally distributed usage of core metrics. On average, all three metrics are utilized at about 20% (0.2) of the configured hardware maximum. At a point in time, the maximum even reached close to 100% (1.0) of the memory bandwidth (mem_bw)."
 >}}
+
 ## Scatter / Bubble Plot
 
 Bubble scatter plots show the position of the averages of two selected metrics in relation to each other.
