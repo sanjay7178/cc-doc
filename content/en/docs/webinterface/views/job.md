@@ -53,7 +53,7 @@ Metric values colored in blue, however, usually report performance above the exp
 
 |Color|Level|Description|Note|
 |-----|-----|-----------|----|
-|Blue|Info|Metric value below or slightly above (<= 5%) maximum configured threshold|Job performance above expected parameters - Inspection recommended|
+|Blue|Info|Metric value below maximum configured peak threshold|Job performance above expected parameters - Inspection recommended|
 |Green|OK|Metric value below normal configured threshold|Job performance within expected parameters|
 |Yellow|Caution|Metric value below configured caution threshold|Job performance might be impacted|
 |Red|Warning|Metric value below configured warning threshold|Job performance impacted with high probability - Inspection recommended|
