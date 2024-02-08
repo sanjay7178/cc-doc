@@ -4,7 +4,9 @@ description: Database and job archive migrations
 categories: [cc-backend]
 tags: [Admin]
 ---
+
 ## Introduction
+
 In general, an upgrade is nothing more than a replacement of the binary file.
 All the necessary files, except the database file, the configuration file and
 the job archive, are embedded in the binary file. It is recommended to use a
@@ -17,20 +19,22 @@ The database and the job archive are versioned. Each release binary supports
 specific versions of the database and job archive. If a version mismatch is
 detected, the application is terminated and migration is required.
 
-**IMPORTANT NOTE**
+{{% pageinfo color="danger" %}}
 
+**IMPORTANT NOTE**</br>
 It is recommended to make a backup copy of the database before each update. This
 is mandatory in case the database needs to be migrated. In the case of sqlite,
 this means to stopping `cc-backend` and copying the sqlite database file
 somewhere.
+{{% /pageinfo %}}
 
-##  Migrating the database
+## Migrating the database
 
 After you have backed up the database, run the following command to migrate the
 database to the latest version:
 
 ```sh
-$ ./cc-backend -migrate-db
+> ./cc-backend -migrate-db
 ```
 
 The migration files are embedded in the binary and can also be viewed in the cc
@@ -43,7 +47,7 @@ If something goes wrong, you can check the status and get the current schema
 (here for sqlite):
 
 ```sh
-$ sqlite3 var/job.db
+> sqlite3 var/job.db
 ```
 
 In the sqlite console execute:
@@ -74,7 +78,7 @@ must be enough disk space for two complete job archives. If the tool is called
 without options:
 
 ```sh
-$ ./archive-migration
+> ./archive-migration
 ```
 
 it is assumed that a job archive exists in `./var/job-archive`. The new job

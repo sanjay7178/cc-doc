@@ -1,19 +1,15 @@
 ---
 title: Configuration
 description: >
-  ClusterCockpit Configuration Option References.
+  ClusterCockpit Configuration Option References
 categories: [cc-backend]
 tags: [Backend]
 weight: 2
 ---
 
-## Intro
+CC-Backend requires a JSON configuration file that specifies the cluster systems to be used. The schema of the configuration is described at the [schema documentation]({{< ref "config-schema" >}} "Configuration Schema").
 
-cc-backend requires a configuration file that specifies the cluster systems to be used.
-To override the default, specify the location of a json configuration file with the `-config <file path>` command line option.
-All security-related configurations, e.g. keys and passwords, are set using
-environment variables.
-It is supported to set these by means of a `.env` file in the project root.
+To override the default, specify the location of a JSON configuration file with the `-config <file path>` command line option.
 
 ## Configuration Options
 

@@ -102,7 +102,7 @@ Error messages will also be displayd if the user creation process failed. No use
 |Email Address|`string`|Users email, optional, can be blank|
 |Role|Select one|See [roles]({{< ref "roles" >}} "Roles") for more detailed information|
 ||`API`|Allowed to interact with REST API|
-||`User`|Same as if created via LDAP sync|
+|*Default*|`User`|Same as if created via LDAP sync|
 ||`Manager`|Allows to inspect jobs and users of given project|
 ||`Support`|Allows to inspect jobs and users of all projects, has no admin view or settings access|
 ||`Admin`|General access|

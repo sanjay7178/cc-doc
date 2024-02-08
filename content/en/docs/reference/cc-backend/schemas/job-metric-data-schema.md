@@ -6,7 +6,14 @@ tags: [Backend, Archive]
 weight: 7
 ---
 
-# Job metric data
+The following schema in its raw form can be found in the [ClusterCockpit GitHub](https://github.com/ClusterCockpit/cc-backend/tree/master/pkg/schema/schemas) repository.
+
+{{< alert title="Manual Updates">}}
+  Changes to the original JSON schema found in the repository are not automatically rendered in this reference documentation.</br></br>
+  **Last Update:** 02.02.2024
+{{< /alert >}}
+
+## Job metric data
 
 - [1. [Required] Property Job metric data > unit](#unit)
   - [1.1. [Required] Property Job metric data > unit > base](#unit_base)

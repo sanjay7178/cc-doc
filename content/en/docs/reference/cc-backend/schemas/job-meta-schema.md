@@ -6,7 +6,14 @@ tags: [Backend, Archive]
 weight: 6
 ---
 
-# Job meta data
+The following schema in its raw form can be found in the [ClusterCockpit GitHub](https://github.com/ClusterCockpit/cc-backend/tree/master/pkg/schema/schemas) repository.
+
+{{< alert title="Manual Updates">}}
+  Changes to the original JSON schema found in the repository are not automatically rendered in this reference documentation.</br></br>
+  **Last Update:** 02.02.2024
+{{< /alert >}}
+
+## Job meta data
 
 - [1. [Required] Property Job meta data > jobId](#jobId)
 - [2. [Required] Property Job meta data > user](#user)
